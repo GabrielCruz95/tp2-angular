@@ -1,0 +1,19 @@
+<h1>Estudiantes</h1>
+
+
+<ul>
+    <li *ngFor="let estudiante of listaEstudiantes" [ngClass]="estudiante.nota >= 6 ? 'aprobado' : 'desaprobado'">
+        {{ estudiante.nombre }}
+        <button *ngIf="estudiante.nota < 6">Desaprobado</button>
+    </li>
+</ul>
+
+<div [ngSwitch]="estudianteActual.nombre">
+    <div *ngSwitchCase="'Juan'">Juan se encuentra en la plataforma</div>
+    <div *ngSwitchCase="'Leticia'">Mónica se encuentra activa en el sitio</div>
+    <div *ngSwitchDefault>Otro usuario se encuentra logeado</div>
+</div>
+
+<hr>
+
+<p>{{ estudianteActual | json }}</p>
